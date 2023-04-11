@@ -55,7 +55,7 @@ const Nav = () => {
     } );
 
     return (
-        <nav className='py-4 sticky top-0 ease-in-out duration-300 bg-[#F9F9FF]'>
+        <nav className='py-4 fixed top-0 ease-in-out duration-300 bg-[#F9F9FF] z-10 w-full'>
             <div className='w-11/12 md:w-[85%] lg:w-[70%] flex items-center justify-between mx-auto'>
                 <Link
                     to="/"
@@ -80,16 +80,22 @@ const Nav = () => {
                     } ) }
                 </div>
 
-                <a href='#featured-jobs' className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold p-2 md:py-5 md:px-7 rounded-md md:rounded-lg'>
+                <button
+                    onClick={ () =>
+                    {
+                        document.getElementById( 'featured-jobs' ).scrollIntoView( { behavior: 'smooth' } );
+                    }}
+                    className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold p-2 md:py-5 md:px-7 rounded-md md:rounded-lg'
+                >
                     Start Applying
-                </a>
+                </button>
 
                 <button className='md:hidden' onClick={() => setIsToggled(!isToggled)}>
                     <RiMenu3Line size={ 28 } />
                 </button>
 
                 <div
-                    className={ `${ isToggled ? "flex" : "hidden"} flex-col md:hidden gap-[1px] justify-center rounded fixed top-[4.5rem] right-2 overflow-hidden drop-shadow-2xl duration-500 ease-in-out`}>
+                    className={ `${ isToggled ? "flex" : "hidden"} animate-navAnimatorOpen  flex-col md:hidden gap-[1px] justify-center rounded fixed top-[4.5rem] right-2 overflow-hidden drop-shadow-2xl`}>
                     { requiredLinks.map( link => {
                         return (
                             <Link

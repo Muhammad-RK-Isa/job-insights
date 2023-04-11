@@ -8,7 +8,7 @@ const Home = () => {
     const categories = useLoaderData();
     
     return (
-        <div className='scroll-smooth'>
+        <div>
             <Header />
             <JobCategories categories={ categories } />
             <FeaturedJobs/>

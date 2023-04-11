@@ -13,7 +13,7 @@ const FeaturedJobs = () => {
             try {
                 const response = await fetch( "jobs.JSON" );
                 const data = await response.json();
-                setJobs( data );
+                setJobs( data.slice( 0, 4 ) );
             }
             catch ( error ) {
                 console.log( error );
@@ -27,7 +27,14 @@ const FeaturedJobs = () => {
         try {
             const response = await fetch( 'jobs.JSON' );
             const data = await response.json();
-            setJobs( data );
+            switch ( jobs.length === 4 ) {
+                case true:
+                    setJobs( data );
+                    break;
+                case false:
+                    setJobs( data.slice( 0, 4 ) );
+                    break;
+            };
         }
         catch ( error ) {
             console.log( error );
@@ -86,7 +93,15 @@ const FeaturedJobs = () => {
                         </div> );
                 }
                 ) }
+
             </div>
+
+            <button
+                onClick={ () => handleShowAllJobs() }
+                className='w-max bg-gradient-to-r hover:bg-gradient-to-l from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-lg font-semibold px-3 py-2 md:py-3 md:px-7 rounded-md md:rounded-lg mt-6'
+            >
+                Show { jobs.length === 4 ? "More" : "Less" }
+            </button>
         </div>
     );
 };
