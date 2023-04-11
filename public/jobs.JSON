@@ -1,0 +1,334 @@
+[
+    {
+        "id": "OJB202301",
+        "img": "../src/assets/All Images/google.png",
+        "title": "UI/UX Designer",
+        "jobTitle": "Product Designer",
+        "company": "Google LLC",
+        "type": "Remote",
+        "workPeriod": "Full Time",
+        "location": "California, New York",
+        "salary": "100K - 150K",
+        "description": "A UI/UX (User Interface/User Experience) designer is responsible for designing and creating engaging and effective interfaces for software and web applications. This includes designing the layout, visual design, and interactivity of the user interface.",
+        "responsibility": "Collaborating with cross-functional teams: UI/UX designers often work closely with other teams, including product management, engineering, and marketing, to ensure that the user interface is aligned with business and technical requirements. You will need to be able to effectively communicate your design ideas and gather feedback from other team members.",
+        "educational-requirements": "Bachelor's Degree completed in any reputational university.",
+        "experiences": [
+            "2-3 years in this field",
+            "Open Source Contributions in this field."
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+880 1750-00 00 00"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@email.com"
+            },
+            {
+                "key": "Address",
+                "value": "115 N OAK ST INGLEWOOD CA 90301-4771 USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202302",
+        "img": "../src/assets/All Images/microsoft.png",
+        "title": "Full Stack Developer",
+        "jobTitle": "Software Engineer",
+        "company": "Microsoft Corporation",
+        "type": "In-office",
+        "workPeriod": "Contract Based",
+        "location": "Seattle, Washington",
+        "salary": "120K - 180K",
+        "description": "A Full Stack Developer is responsible for designing, developing, and maintaining web applications from front-end to back-end. This includes developing and implementing user interfaces, server-side logic, and database integration.",
+        "responsibility": "Collaborating with cross-functional teams: Full Stack Developers often work closely with other teams, including product management, UX design, and quality assurance, to ensure that the web application meets business and technical requirements. You will need to be able to effectively communicate your design ideas and gather feedback from other team members.",
+        "educational-requirements": "Bachelor's Degree in Computer Science or related field.",
+        "experiences": [
+            "3-5 years of experience as a Full Stack Developer",
+            "Experience with web development frameworks such as React, Angular, or Vue.js",
+            "Experience with server-side frameworks such as Node.js, Django, or Ruby on Rails"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+1 (425) 882-8080"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@microsoft.com"
+            },
+            {
+                "key": "Address",
+                "value": "One Microsoft Way, Redmond, WA 98052, USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202303",
+        "img": "../src/assets/All Images/amazon.png",
+        "title": "Data Scientist",
+        "jobTitle": "Machine Learning Engineer",
+        "company": "Amazon.com, Inc.",
+        "type": "Remote",
+        "workPeriod": "Full Time",
+        "location": "Seattle, Washington",
+        "salary": "150K - 200K",
+        "description": "A Data Scientist is responsible for developing and implementing statistical models and machine learning algorithms to analyze and interpret complex data sets. This includes designing experiments, collecting and analyzing data, and communicating results to stakeholders.",
+        "responsibility": "Collaborating with cross-functional teams: Data Scientists often work closely with other teams, including product management, engineering, and business intelligence, to understand business requirements and design effective solutions. You will need to be able to effectively communicate your analysis and results to non-technical stakeholders.",
+        "educational-requirements": "Master's or Ph.D. in Statistics, Mathematics, Computer Science, or related field.",
+        "experiences": [
+            "3-5 years of experience as a Data Scientist or Machine Learning Engineer",
+            "Experience with machine learning frameworks such as TensorFlow or PyTorch",
+            "Experience with statistical analysis and data visualization tools such as R or Python"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+1 (888) 280-4331"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@amazon.com"
+            },
+            {
+                "key": "Address",
+                "value": "410 Terry Ave N, Seattle, WA 98109, USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202304",
+        "img": "../src/assets/All Images/facebook.png",
+        "title": "Marketing Manager",
+        "jobTitle": "Digital Marketing Manager",
+        "company": "Facebook, Inc.",
+        "type": "Remote",
+        "workPeriod": "Part Time",
+        "location": "Menlo Park, California",
+        "salary": "120K - 180K",
+        "description": "A Marketing Manager is responsible for developing and implementing marketing strategies to promote a product or service. This includes creating campaigns, conducting market research, and analyzing customer data to improve engagement.",
+        "responsibility": "Collaborating with cross-functional teams: Marketing Managers often work closely with other teams, including product management, design, and engineering, to ensure that marketing campaigns align with product goals and customer needs. You will need to be able to effectively communicate your strategy and results to non-marketing stakeholders.",
+        "educational-requirements": "Bachelor's or Master's degree in Marketing, Business, or related field.",
+        "experiences": [
+            "5-7 years of experience as a Digital Marketing Manager or similar role",
+            "Experience with SEO/SEM, social media marketing, and email marketing",
+            "Experience with marketing analytics tools such as Google Analytics"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+1 (650) 308-7300"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@facebook.com"
+            },
+            {
+                "key": "Address",
+                "value": "1 Hacker Way, Menlo Park, CA 94025, USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202305",
+        "img": "../src/assets/All Images/amazon.png",
+        "title": "Software Development Engineer",
+        "jobTitle": "SDE",
+        "company": "Amazon.com, Inc.",
+        "type": "Onsite",
+        "workPeriod": "Full Time",
+        "location": "Seattle, Washington",
+        "salary": "150K - 200K",
+        "description": "A Software Development Engineer is responsible for designing, developing, testing, and maintaining software applications for various platforms. This includes coding, debugging, and collaborating with cross-functional teams to deliver high-quality software products.",
+        "responsibility": "Designing and implementing software solutions: SDEs are responsible for developing and implementing software solutions that meet the needs of the organization. This includes writing code, debugging and troubleshooting, and collaborating with other teams to ensure high-quality software products.",
+        "educational-requirements": "Bachelor's or Master's degree in Computer Science or related field.",
+        "experiences": [
+            "5-7 years of experience in software development",
+            "Experience with software development tools such as Git, Jenkins, and JIRA",
+            "Experience with Agile software development methodologies"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+1 (206) 266-1000"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@amazon.com"
+            },
+            {
+                "key": "Address",
+                "value": "410 Terry Ave N, Seattle, WA 98109, USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202307",
+        "img": "../src/assets/All Images/aramco.jpg",
+        "title": "Software Developer",
+        "jobTitle": "Full Stack Developer",
+        "company": "Saudi Aramco",
+        "type": "In-Office",
+        "workPeriod": "Full Time",
+        "location": "Dhahran, Eastern Province, Saudi Arabia",
+        "salary": "120K - 200K",
+        "description": "A Full Stack Developer is responsible for developing both the front-end and back-end of web applications. This includes designing user interactions on websites, developing servers and databases for website functionality, and coding for mobile platforms.",
+        "responsibility": "Working with cross-functional teams: Full Stack Developers often work closely with other teams, including product management, design, and engineering, to ensure that web applications align with product goals and customer needs. You will need to be able to effectively communicate your ideas and work closely with other team members.",
+        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Engineering, or related field.",
+        "experiences": [
+            "5-7 years of experience as a Full Stack Developer or similar role",
+            "Experience with web frameworks such as AngularJS, React, and Node.js",
+            "Experience with database technologies such as MySQL, MongoDB, and Oracle"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+966 13 872-0115"
+            },
+            {
+                "key": "Email",
+                "value": "careers@aramco.com"
+            },
+            {
+                "key": "Address",
+                "value": "Saudi Aramco Building, King Abdulaziz Street, Dhahran 31311, Saudi Arabia"
+            }
+        ]
+    },
+    {
+        "id": "OJB202310",
+        "img":"../src/assets/All Images/amazon.png",
+        "title": "Software Engineer",
+        "jobTitle": "Backend Engineer",
+        "company": "Amazon.com, Inc.",
+        "type": "Onsite",
+        "workPeriod": "Full Time",
+        "location": "Seattle, Washington",
+        "salary": "130K - 200K",
+        "description": "A Software Engineer is responsible for designing, developing and maintaining software systems. This includes writing code, debugging, and testing software to ensure it meets business requirements and functions correctly.",
+        "responsibility": "Collaborating with cross-functional teams: Software Engineers often work closely with other teams, including product management, design, and QA, to ensure that software meets user requirements and is delivered on time. You will need to be able to effectively communicate technical information to non-technical stakeholders.",
+        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Software Engineering or related field.",
+        "experiences": [
+            "5+ years of experience as a Backend Engineer or similar role",
+            "Experience with programming languages such as Java, Python, or Ruby",
+            "Experience with databases such as MySQL, PostgreSQL, or Oracle",
+            "Experience with cloud computing platforms such as AWS, GCP, or Azure"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+1 (206) 266-1000"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@amazon.com"
+            },
+            {
+                "key": "Address",
+                "value": "410 Terry Ave N, Seattle, WA 98109, USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202308",
+        "img": "../src/assets/All Images/tesla.jpg",
+        "title": "Software Engineer",
+        "jobTitle": "Full-Stack Developer",
+        "company": "Tesla, Inc.",
+        "type": "Onsite",
+        "workPeriod": "Full Time",
+        "location": "Palo Alto, California",
+        "salary": "120K - 160K",
+        "description": "A Full-Stack Developer is responsible for designing and developing both front-end and back-end software solutions. This includes creating user-facing features and integrating with databases and APIs.",
+        "responsibility": "Collaborating with cross-functional teams: Full-Stack Developers often work closely with other teams, including product management, design, and testing, to ensure that software solutions align with business goals and user needs. You will need to be able to effectively communicate your ideas and solutions to non-technical stakeholders.",
+        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Engineering, or related field.",
+        "experiences": [
+            "3-5 years of experience as a Full-Stack Developer or similar role",
+            "Experience with JavaScript frameworks such as React, Angular, or Vue.js",
+            "Experience with server-side languages such as Java, Python, or Node.js",
+            "Experience with databases such as MySQL, PostgreSQL, or MongoDB"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+1 (650) 681-5100"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@tesla.com"
+            },
+            {
+                "key": "Address",
+                "value": "3500 Deer Creek Road, Palo Alto, CA 94304, USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202388",
+        "img": "../src/assets/All Images/acme.jpg",
+        "title": "Cybersecurity Analyst",
+        "jobTitle": "Information Security Analyst",
+        "company": "Acme Corporation",
+        "type": "In-office",
+        "workPeriod": "Full Time",
+        "location": "Phoenix, Arizona",
+        "salary": "80K - 120K",
+        "description": "A Cybersecurity Analyst is responsible for implementing and maintaining security measures to protect computer systems, networks, and data from unauthorized access or attacks. This includes conducting regular security audits, creating and implementing security policies and procedures, and monitoring system activity for signs of security breaches.",
+        "responsibility": "Collaborating with cross-functional teams: Cybersecurity Analysts often work closely with other teams, including IT, legal, and compliance, to ensure that security measures align with business and regulatory requirements. You will need to be able to effectively communicate security risks and solutions to non-technical stakeholders.",
+        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Information Systems, or related field.",
+        "experiences": [
+            "3-5 years of experience in cybersecurity or information security",
+            "Experience with security tools and technologies such as firewalls, intrusion detection/prevention systems, and endpoint protection",
+            "Experience with security frameworks such as NIST, ISO, or CIS"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+1 (480) 555-1234"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@acmecorp.com"
+            },
+            {
+                "key": "Address",
+                "value": "123 Main St, Phoenix, AZ 85001, USA"
+            }
+        ]
+    },
+    {
+        "id": "OJB202377",
+        "img": "../src/assets/All Images/gphousehold.png",
+        "title": "Brand Manager",
+        "jobTitle": "Marketing Manager",
+        "company": "GPH Household Products",
+        "type": "Full-time",
+        "workPeriod": "Part Time",
+        "location": "Dhaka, Bangladesh",
+        "salary": "80K - 120K BDT",
+        "description": "GPH Household Products is looking for a Brand Manager to join our team. The ideal candidate will be responsible for developing and executing marketing strategies for our brand portfolio, ensuring that our products are well-positioned in the market and effectively marketed to the target audience.",
+        "responsibility": "Develop and execute brand marketing strategies, including product positioning, pricing, and promotion. Work closely with cross-functional teams to ensure that marketing efforts are aligned with business goals. Conduct market research to gain insights into customer needs and preferences. Manage marketing budgets and track performance against KPIs.",
+        "educational-requirements": "Bachelor's or Master's degree in Marketing, Business, or related field.",
+        "experiences": [
+            "5+ years of experience in brand management or marketing",
+            "Experience with product positioning, pricing, and promotion",
+            "Strong analytical and problem-solving skills",
+            "Excellent communication and interpersonal skills"
+        ],
+        "contactInfo": [
+            {
+                "key": "Phone",
+                "value": "+880 1750-00 00 00"
+            },
+            {
+                "key": "E-mail",
+                "value": "info@gphousehold.com"
+            },
+            {
+                "key": "Address",
+                "value": "House-10, Road-4, Sector-7, Uttara Model Town, Dhaka-1230, Bangladesh"
+            }
+        ]
+    }
+]
