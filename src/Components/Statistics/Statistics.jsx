@@ -30,7 +30,7 @@ const Statistics = () => {
             </header>
 
             <div className='w-11/12 md:w-[85%] lg:w-[70%] mx-auto h-max'>
-                <BubbleChart assignmentMarks={ assignmentMarks } />
+                {/* <BubbleChart assignmentMarks={ assignmentMarks } /> */}
             </div>
         </div>
     );
