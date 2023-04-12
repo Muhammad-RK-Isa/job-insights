@@ -41,14 +41,22 @@ const Nav = () => {
             const nav = document.querySelector( 'nav' );
             switch ( window.scrollY > 10 ) {
                 case true:
-                    if ( nav.classList.contains( 'bg-[#F9F9FF]' ) ) {
-                        nav.classList.add( 'bg-[#FFFFFF]' );
+                    if ( nav.classList.contains('bg-[#F9F9FF]')) {
+                        nav.classList.replace( 'bg-[#F9F9FF]', 'bg-[#FFFFFF]' );
                         nav.classList.add( 'drop-shadow-lg' );
-                    };
+                    } else {
+                        nav.classList.replace( 'bg-transparent', 'bg-[#FFFFFF]' );
+                        nav.classList.add( 'drop-shadow-lg' );
+                    }
                     break;
                 case false:
-                    nav.classList.replace( 'bg-[#FFFFFF]', 'bg-[#F9F9FF]' );
-                    nav.classList.remove( 'drop-shadow-lg' );
+                    if ( location.pathname === '/' ) {
+                        nav.classList.replace( 'bg-[#FFFFFF]', 'bg-[#F9F9FF]' );
+                        nav.classList.remove( 'drop-shadow-lg' );
+                    } else {
+                        nav.classList.replace( 'bg-[#FFFFFF]', 'bg-transparent' );
+                        nav.classList.remove( 'drop-shadow-lg' );
+                    }
                     break;
             };
         }, [] );

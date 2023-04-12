@@ -11,7 +11,7 @@
         "salary": "100K - 150K",
         "description": "A UI/UX (User Interface/User Experience) designer is responsible for designing and creating engaging and effective interfaces for software and web applications. This includes designing the layout, visual design, and interactivity of the user interface.",
         "responsibility": "Collaborating with cross-functional teams: UI/UX designers often work closely with other teams, including product management, engineering, and marketing, to ensure that the user interface is aligned with business and technical requirements. You will need to be able to effectively communicate your design ideas and gather feedback from other team members.",
-        "educational-requirements": "Bachelor's Degree completed in any reputational university.",
+        "educationalRequirements": "Bachelor's Degree completed in any reputational university.",
         "experiences": [
             "2-3 years in this field",
             "Open Source Contributions in this field."
@@ -43,7 +43,7 @@
         "salary": "120K - 180K",
         "description": "A Full Stack Developer is responsible for designing, developing, and maintaining web applications from front-end to back-end. This includes developing and implementing user interfaces, server-side logic, and database integration.",
         "responsibility": "Collaborating with cross-functional teams: Full Stack Developers often work closely with other teams, including product management, UX design, and quality assurance, to ensure that the web application meets business and technical requirements. You will need to be able to effectively communicate your design ideas and gather feedback from other team members.",
-        "educational-requirements": "Bachelor's Degree in Computer Science or related field.",
+        "educationalRequirements": "Bachelor's Degree in Computer Science or related field.",
         "experiences": [
             "3-5 years of experience as a Full Stack Developer",
             "Experience with web development frameworks such as React, Angular, or Vue.js",
@@ -76,7 +76,7 @@
         "salary": "150K - 200K",
         "description": "A Data Scientist is responsible for developing and implementing statistical models and machine learning algorithms to analyze and interpret complex data sets. This includes designing experiments, collecting and analyzing data, and communicating results to stakeholders.",
         "responsibility": "Collaborating with cross-functional teams: Data Scientists often work closely with other teams, including product management, engineering, and business intelligence, to understand business requirements and design effective solutions. You will need to be able to effectively communicate your analysis and results to non-technical stakeholders.",
-        "educational-requirements": "Master's or Ph.D. in Statistics, Mathematics, Computer Science, or related field.",
+        "educationalRequirements": "Master's or Ph.D. in Statistics, Mathematics, Computer Science, or related field.",
         "experiences": [
             "3-5 years of experience as a Data Scientist or Machine Learning Engineer",
             "Experience with machine learning frameworks such as TensorFlow or PyTorch",
@@ -109,7 +109,7 @@
         "salary": "120K - 180K",
         "description": "A Marketing Manager is responsible for developing and implementing marketing strategies to promote a product or service. This includes creating campaigns, conducting market research, and analyzing customer data to improve engagement.",
         "responsibility": "Collaborating with cross-functional teams: Marketing Managers often work closely with other teams, including product management, design, and engineering, to ensure that marketing campaigns align with product goals and customer needs. You will need to be able to effectively communicate your strategy and results to non-marketing stakeholders.",
-        "educational-requirements": "Bachelor's or Master's degree in Marketing, Business, or related field.",
+        "educationalRequirements": "Bachelor's or Master's degree in Marketing, Business, or related field.",
         "experiences": [
             "5-7 years of experience as a Digital Marketing Manager or similar role",
             "Experience with SEO/SEM, social media marketing, and email marketing",
@@ -142,7 +142,7 @@
         "salary": "150K - 200K",
         "description": "A Software Development Engineer is responsible for designing, developing, testing, and maintaining software applications for various platforms. This includes coding, debugging, and collaborating with cross-functional teams to deliver high-quality software products.",
         "responsibility": "Designing and implementing software solutions: SDEs are responsible for developing and implementing software solutions that meet the needs of the organization. This includes writing code, debugging and troubleshooting, and collaborating with other teams to ensure high-quality software products.",
-        "educational-requirements": "Bachelor's or Master's degree in Computer Science or related field.",
+        "educationalRequirements": "Bachelor's or Master's degree in Computer Science or related field.",
         "experiences": [
             "5-7 years of experience in software development",
             "Experience with software development tools such as Git, Jenkins, and JIRA",
@@ -175,7 +175,7 @@
         "salary": "120K - 200K",
         "description": "A Full Stack Developer is responsible for developing both the front-end and back-end of web applications. This includes designing user interactions on websites, developing servers and databases for website functionality, and coding for mobile platforms.",
         "responsibility": "Working with cross-functional teams: Full Stack Developers often work closely with other teams, including product management, design, and engineering, to ensure that web applications align with product goals and customer needs. You will need to be able to effectively communicate your ideas and work closely with other team members.",
-        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Engineering, or related field.",
+        "educationalRequirements": "Bachelor's or Master's degree in Computer Science, Engineering, or related field.",
         "experiences": [
             "5-7 years of experience as a Full Stack Developer or similar role",
             "Experience with web frameworks such as AngularJS, React, and Node.js",
@@ -208,7 +208,7 @@
         "salary": "130K - 200K",
         "description": "A Software Engineer is responsible for designing, developing and maintaining software systems. This includes writing code, debugging, and testing software to ensure it meets business requirements and functions correctly.",
         "responsibility": "Collaborating with cross-functional teams: Software Engineers often work closely with other teams, including product management, design, and QA, to ensure that software meets user requirements and is delivered on time. You will need to be able to effectively communicate technical information to non-technical stakeholders.",
-        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Software Engineering or related field.",
+        "educationalRequirements": "Bachelor's or Master's degree in Computer Science, Software Engineering or related field.",
         "experiences": [
             "5+ years of experience as a Backend Engineer or similar role",
             "Experience with programming languages such as Java, Python, or Ruby",
@@ -242,7 +242,7 @@
         "salary": "120K - 160K",
         "description": "A Full-Stack Developer is responsible for designing and developing both front-end and back-end software solutions. This includes creating user-facing features and integrating with databases and APIs.",
         "responsibility": "Collaborating with cross-functional teams: Full-Stack Developers often work closely with other teams, including product management, design, and testing, to ensure that software solutions align with business goals and user needs. You will need to be able to effectively communicate your ideas and solutions to non-technical stakeholders.",
-        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Engineering, or related field.",
+        "educationalRequirements": "Bachelor's or Master's degree in Computer Science, Engineering, or related field.",
         "experiences": [
             "3-5 years of experience as a Full-Stack Developer or similar role",
             "Experience with JavaScript frameworks such as React, Angular, or Vue.js",
@@ -276,7 +276,7 @@
         "salary": "80K - 120K",
         "description": "A Cybersecurity Analyst is responsible for implementing and maintaining security measures to protect computer systems, networks, and data from unauthorized access or attacks. This includes conducting regular security audits, creating and implementing security policies and procedures, and monitoring system activity for signs of security breaches.",
         "responsibility": "Collaborating with cross-functional teams: Cybersecurity Analysts often work closely with other teams, including IT, legal, and compliance, to ensure that security measures align with business and regulatory requirements. You will need to be able to effectively communicate security risks and solutions to non-technical stakeholders.",
-        "educational-requirements": "Bachelor's or Master's degree in Computer Science, Information Systems, or related field.",
+        "educationalRequirements": "Bachelor's or Master's degree in Computer Science, Information Systems, or related field.",
         "experiences": [
             "3-5 years of experience in cybersecurity or information security",
             "Experience with security tools and technologies such as firewalls, intrusion detection/prevention systems, and endpoint protection",
@@ -309,7 +309,7 @@
         "salary": "80K - 120K BDT",
         "description": "GPH Household Products is looking for a Brand Manager to join our team. The ideal candidate will be responsible for developing and executing marketing strategies for our brand portfolio, ensuring that our products are well-positioned in the market and effectively marketed to the target audience.",
         "responsibility": "Develop and execute brand marketing strategies, including product positioning, pricing, and promotion. Work closely with cross-functional teams to ensure that marketing efforts are aligned with business goals. Conduct market research to gain insights into customer needs and preferences. Manage marketing budgets and track performance against KPIs.",
-        "educational-requirements": "Bachelor's or Master's degree in Marketing, Business, or related field.",
+        "educationalRequirements": "Bachelor's or Master's degree in Marketing, Business, or related field.",
         "experiences": [
             "5+ years of experience in brand management or marketing",
             "Experience with product positioning, pricing, and promotion",
