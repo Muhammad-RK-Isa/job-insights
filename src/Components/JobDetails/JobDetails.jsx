@@ -9,7 +9,7 @@ import dialerIcon from '../../assets/Icons/Frame-2.png';
 import messegeIcon from '../../assets/Icons/Frame-3.png';
 import locationIcon from '../../assets/Icons/Frame-4.png';
 
-import { scrollToTop } from '../../utils';
+import { addToLS, scrollToTop } from '../../utils';
 
 const JobDetails = () => {
 
@@ -30,11 +30,14 @@ const JobDetails = () => {
         };
 
         getJobData();
-        // scrollToTop();
+        scrollToTop();
     }, [] );
 
-    const { jobTitle, company, description, responsibility, educationalRequirements, experiences, salary, contactInfo } = job;
+    const handleApplyBtn = () => {
+        localStorage.setItem()
+    }
 
+    const { jobTitle, company, description, responsibility, educationalRequirements, experiences, salary, contactInfo } = job;
 
     return (
         <>
@@ -111,7 +114,10 @@ const JobDetails = () => {
 
                     </div>
 
-                    <button className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold mt-4 py-4 md:py-5 md:px-7 rounded-md md:rounded-lg'>
+                    <button
+                        onClick={ () => addToLS(jobId) }
+                        className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold mt-4 py-4 md:py-5 md:px-7 rounded-md md:rounded-lg'
+                    >
                         Apply Now
                     </button>
 
