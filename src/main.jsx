@@ -8,6 +8,7 @@ import Statistics from './Statistics/Statistics';
 import './index.css';
 import JobDetails from './Components/JobDetails/JobDetails';
 import AppliedJobs from './Components/AppliedJobs/AppliedJobs';
+import NotFound from './Components/NotFound/NotFound';
 
 const router = createBrowserRouter( [
   {
@@ -37,8 +38,8 @@ const router = createBrowserRouter( [
         loader: async () => fetch('/jobs.JSON')
       },
       {
-        path: "/*",
-        element: <Error/>
+        path: '*',
+        element: <NotFound/>
       }
     ]
   }
