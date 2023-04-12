@@ -92,7 +92,7 @@ const AppliedJobs = () => {
 
                                 </div>
 
-                                <Link to={ `/${ id }` } className='hidden md:block  w-max bg-gradient-to-r hover:bg-gradient-to-l from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-lg font-semibold px-3 py-2 md:py-3 md:px-7 rounded-md md:rounded-lg my-auto ml-auto'>
+                                <Link to={ `/job/${ id }` } className='hidden md:block  w-max bg-gradient-to-r hover:bg-gradient-to-l from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-lg font-semibold px-3 py-2 md:py-3 md:px-7 rounded-md md:rounded-lg my-auto ml-auto'>
                                     View Details
                                 </Link>
 

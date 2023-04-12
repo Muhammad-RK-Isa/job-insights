@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Blog from './Components/Blog/Blog';
 import Home from './Components/Home/Home';
-import Statistics from './Statistics/Statistics';
+import Statistics from './Components/Statistics/Statistics';
 import './index.css';
 import JobDetails from './Components/JobDetails/JobDetails';
 import AppliedJobs from './Components/AppliedJobs/AppliedJobs';
