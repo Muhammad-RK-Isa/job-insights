@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 import headerImgLeft from '../../assets/All Images/Vector.png';
 import headerImgRight from '../../assets/All Images/Vector-1.png';
@@ -17,19 +17,11 @@ const JobDetails = () => {
 
     const [ job, setJob ] = useState( {} );
 
+    const data = useLoaderData();
+    console.log( data );
     useEffect( () => {
-        const getJobData = async () => {
-            try {
-                const res = await fetch( 'jobs.JSON' );
-                const data = await res.json();
-                const matchedJob = await data.find( job => job.id === jobId );
-                setJob( matchedJob );
-            } catch ( error ) {
-                console.log( error );
-            }
-        };
-
-        getJobData();
+        const matchedJob = data.find( job => job.id === jobId );
+        setJob( matchedJob );
         scrollToTop();
     }, [] );
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const JobCategories = ( props ) => {
+
     const categories = props.categories;
 
     return (
@@ -9,7 +10,7 @@ const JobCategories = ( props ) => {
             <p className='font-[500] text-[#757575] text-center'>Explore thousands of job opportunities with all the information you need. Its your future</p>
 
             <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mt-4'>
-                { categories.map( (catergory, idx) => {
+                { Array.isArray( categories ) && categories.map( (catergory, idx) => {
                     const { title, jobsCount, icon } = catergory;
                     return (
                         <div 
