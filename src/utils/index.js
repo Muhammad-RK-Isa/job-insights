@@ -16,3 +16,7 @@ export const navLinks = [
         title: "Blog"
     }
 ];
+
+export const scrollToTop = () => {
+    window.scrollTo( 0, 0 );
+};

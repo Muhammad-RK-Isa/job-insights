@@ -55,7 +55,7 @@ const Nav = () => {
     } );
 
     return (
-        <nav className='h-[4.25rem] md:h-[6.25rem] py-4 fixed top-0 ease-in-out duration-300 bg-[#F9F9FF] z-10 w-full'>
+        <nav className={ `${ location.pathname === '/' ? "bg-[#F9F9FF]" : "bg-transparent"} h-[4.25rem] md:h-[6.25rem] py-4 fixed top-0 ease-in-out duration-300  z-10 w-full`}>
             <div className='w-11/12 md:w-[85%] lg:w-[70%] flex items-center justify-between mx-auto'>
                 <Link
                     to="/"
