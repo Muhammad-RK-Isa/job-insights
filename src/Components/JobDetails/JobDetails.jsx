@@ -33,9 +33,6 @@ const JobDetails = () => {
         scrollToTop();
     }, [] );
 
-    const handleApplyBtn = () => {
-        localStorage.setItem()
-    }
 
     const { jobTitle, company, description, responsibility, educationalRequirements, experiences, salary, contactInfo } = job;
 

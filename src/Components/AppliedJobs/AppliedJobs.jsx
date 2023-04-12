@@ -7,7 +7,7 @@ import bitcoin from '../../assets/Icons/Frame.png';
 
 
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
-import { getStoredAppliedJobs } from '../../utils';
+import { getStoredAppliedJobs, scrollToTop } from '../../utils';
 import { Link } from 'react-router-dom';
 
 const AppliedJobs = () => {
@@ -30,6 +30,10 @@ const AppliedJobs = () => {
         getSavedAppliedJobs();
     }, [] );
 
+    useEffect( () => {
+        scrollToTop();
+    }, [] );
+    
 
     return (
         <>
@@ -52,7 +56,7 @@ const AppliedJobs = () => {
                     { Array.isArray( jobs ) ? jobs.map( job => {
                         const { id, img, jobTitle, company, type, workPeriod, location, salary } = job;
                         return (
-                            <div key={ id } className='w-full h-[200px] md:h-[300px] grid grid-cols-3 md:grid-cols-4 border rounded-lg p-4 md:p-8'>
+                            <div key={ id } className='w-full h-[220px] md:h-[300px] grid grid-cols-3 md:grid-cols-4 border rounded-lg p-4 md:p-8'>
 
                                 <div className='h-min'>
                                     <img src={ img } alt="" className='h-full object-contain' />
