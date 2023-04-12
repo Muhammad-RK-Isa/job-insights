@@ -3,21 +3,22 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { RiMenu3Line } from 'react-icons/ri';
 import { navLinks } from '../../utils';
+import { IoCloseSharp } from 'react-icons/io5';
 
 const Nav = () => {
 
     const [ isToggled, setIsToggled ] = useState( false );
-    
+
     const location = useLocation();
-    
+
     const [ active, setActive ] = useState( "" );
 
 
     let requiredLinks;
 
-    switch (location.pathname === "/") {
+    switch ( location.pathname === "/" ) {
         case true:
-            requiredLinks = navLinks.filter(link => link.id !== "/")
+            requiredLinks = navLinks.filter( link => link.id !== "/" );
             break;
         case false:
             requiredLinks = navLinks;
@@ -26,14 +27,13 @@ const Nav = () => {
 
 
     useEffect( () => {
-        if (location.pathname === "/") {
+        if ( location.pathname === "/" ) {
             setActive( location.pathname );
         }
         else {
-            setActive( location.pathname.split('/').join('') );
+            setActive( location.pathname.split( '/' ).join( '' ) );
         }
-    }, [])
-    
+    }, [] );
 
 
     useEffect( () => {
@@ -55,7 +55,7 @@ const Nav = () => {
     } );
 
     return (
-        <nav className='py-4 fixed top-0 ease-in-out duration-300 bg-[#F9F9FF] z-10 w-full'>
+        <nav className='h-[4.25rem] md:h-[6.25rem] py-4 fixed top-0 ease-in-out duration-300 bg-[#F9F9FF] z-10 w-full'>
             <div className='w-11/12 md:w-[85%] lg:w-[70%] flex items-center justify-between mx-auto'>
                 <Link
                     to="/"
@@ -69,9 +69,9 @@ const Nav = () => {
                         return (
                             <Link
                                 key={ link.id }
-                                onClick={() => setActive(link.id)}
+                                onClick={ () => setActive( link.id ) }
                                 className={
-                                    `${ active === link.id && "bg-gradient-to-r text-transparent"} text-[#757575] font-semibold hover:font-bold hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF] bg-clip-text hover:text-transparent ` }
+                                    `${ active === link.id ? "bg-gradient-to-r text-transparent font-bold" : "text-[#757575] font-semibold" } hover:font-bold hover:bg-gradient-to-l from-[#7E90FE] to-[#9873FF] bg-clip-text hover:text-transparent ` }
                                 to={ link.id !== '/' ? `/${ link.id }` : `${ link.id }` }
                             >
                                 { link.title }
@@ -81,28 +81,29 @@ const Nav = () => {
                 </div>
 
                 <button
-                    onClick={ () =>
-                    {
+                    onClick={ () => {
                         document.getElementById( 'featured-jobs' ).scrollIntoView( { behavior: 'smooth' } );
-                    }}
+                    } }
                     className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold p-2 md:py-5 md:px-7 rounded-md md:rounded-lg'
                 >
                     Start Applying
                 </button>
 
-                <button className='md:hidden' onClick={() => setIsToggled(!isToggled)}>
-                    <RiMenu3Line size={ 28 } />
+                <button
+                    className='md:hidden'
+                    onClick={ () => setIsToggled( !isToggled )}>
+                    { !isToggled ? <RiMenu3Line size={ 28 } /> : <IoCloseSharp size={ 28 } />}
                 </button>
 
                 <div
-                    className={ `${ isToggled ? "flex" : "hidden"} animate-navAnimatorOpen  flex-col md:hidden gap-[1px] justify-center rounded fixed top-[4.5rem] right-2 overflow-hidden drop-shadow-2xl`}>
+                    className={ `${ isToggled ? "flex" : "hidden"} animate-navOpen  flex-col md:hidden gap-[1px] justify-center rounded fixed top-[4.5rem] right-2 overflow-hidden drop-shadow-2xl` }>
                     { requiredLinks.map( link => {
                         return (
                             <Link
                                 key={ link.id }
-                                onClick={ () => {setActive( link.id ); setIsToggled(false)} }
+                                onClick={ () => { setActive( link.id ); setIsToggled( false ); } }
                                 className={
-                                    `${ link.id === active ? "text-white" : "text-[#cdcdcd]"} font-semibold bg-gradient-to-l from-[#7E90FE] to-[#9873FF] py-4 px-8` }
+                                    `${ link.id === active ? "text-white" : "text-[#cdcdcd]" } font-semibold bg-gradient-to-l from-[#7E90FE] to-[#9873FF] py-4 px-8` }
                                 to={ link.id !== '/' ? `/${ link.id }` : "/" }
                             >
                                 { link.title }

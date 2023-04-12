@@ -3,6 +3,7 @@ import Header from './../Header/Header';
 import { useLoaderData } from 'react-router-dom';
 import JobCategories from '../JobCategories/JobCategories';
 import FeaturedJobs from './../FeaturedJobs/FeaturedJobs';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     const categories = useLoaderData();
@@ -11,7 +12,8 @@ const Home = () => {
         <div>
             <Header />
             <JobCategories categories={ categories } />
-            <FeaturedJobs/>
+            <FeaturedJobs />
+            <Footer/>
         </div>
     );
 };

@@ -52,11 +52,11 @@ const FeaturedJobs = () => {
                     return (
                         <div
                             key={ id }
-                            className='h-60 md:h-[450px] grid gap-2 md:gap-4 p-4 md:p-6 lg:p-10 border border-[#E8E8E8] rounded-lg'
+                            className='h-64 md:h-[450px] grid gap-2 md:gap-4 p-4 md:p-6 lg:p-10 border border-[#E8E8E8] rounded-lg'
                         >
                             <div className='flex flex-col gap-1'>
                                 <div>
-                                    <img src={ img } alt="company image" className='max-h-10 lg:max-h-20 object-contain' />
+                                    <img src={ img } alt="company image" className='max-h-14 lg:max-h-20 object-contain' />
                                 </div>
 
                                 <div className='grid md:gap-4'>
