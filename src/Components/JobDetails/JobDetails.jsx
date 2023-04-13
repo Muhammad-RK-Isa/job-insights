@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 
 import headerImgLeft from '../../assets/All Images/Vector.png';
 import headerImgRight from '../../assets/All Images/Vector-1.png';
@@ -18,10 +18,17 @@ const JobDetails = () => {
     const [ job, setJob ] = useState( {} );
 
     const data = useLoaderData();
-    console.log( data );
+
+    const navigate = useNavigate();
+
     useEffect( () => {
         const matchedJob = data.find( job => job.id === jobId );
-        setJob( matchedJob );
+        if (matchedJob) {
+            setJob( matchedJob );
+        }
+        else {
+            navigate( '*' );
+        }
         scrollToTop();
     }, [] );
 
@@ -53,7 +60,7 @@ const JobDetails = () => {
                     { Array.isArray( experiences ) && experiences.map( ( experience, index ) => <p key={ index } className='text-[#757575] font-[500]'>{ experience }</p> ) }
                 </div>
 
-                <div className='grid'>
+                <div id='job-details' className='grid'>
 
                     <div className='bg-gradient-to-r from-[#7E90FE0D] to-[#9873FF0D] bg-opacity-10 rounded-lg p-4 md:p-7'>
                         <p className='text-2xl text-[#1A1919] font-extrabold'>Job Details</p>

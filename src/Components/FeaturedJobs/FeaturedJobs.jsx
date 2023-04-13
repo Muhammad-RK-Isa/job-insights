@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const FeaturedJobs = () => {
 
+
     const [ jobs, setJobs ] = useState( [] );
 
     useEffect( () => {
@@ -32,6 +33,7 @@ const FeaturedJobs = () => {
                     setJobs( data );
                     break;
                 case false:
+                    document.getElementById( 'featured-jobs' ).scrollIntoView( { behavior: 'smooth' } );
                     setJobs( data.slice( 0, 4 ) );
                     break;
             };

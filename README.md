@@ -1,8 +1,6 @@
 # Job Insights
 # [Checkout the website](https://job-insights.netlify.app)
 
-## !Development in progress, looking forward to finish it by April 14, 2023
-
 # Job Insights
 
 Welcome to Job Insights, a website designed to help job seekers find their ideal job. This website provides various features to help job seekers make informed decisions about their job search. Here is a brief overview of the website's contents:
@@ -22,4 +20,4 @@ Welcome to Job Insights, a website designed to help job seekers find their ideal
 - Salary Data: Job Insights provides salary information for different job titles and industries, based on data from various sources such as Glassdoor and PayScale. This feature allows job seekers to compare salaries for different job titles and industries to help them negotiate better pay.
 
 
-I hope you find Job Insights interesting. Make sure to give it a star. ⭐
+I hope you found Job Insights interesting. Make sure to give it a star. ⭐

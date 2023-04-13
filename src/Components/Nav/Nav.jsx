@@ -82,6 +82,9 @@ const Nav = () => {
                         if (location.pathname === '/') {
                             document.getElementById( 'featured-jobs' ).scrollIntoView( { behavior: 'smooth' } );
                         }
+                        else if ( location.pathname.split( '/' )[ 1 ] === 'job'  ) {
+                            document.getElementById( 'job-details' ).scrollIntoView( { behavior: 'smooth' } );
+                        }
                         else {
                             navigate( '/' );
                             setActive( '/' );
