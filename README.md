@@ -1,7 +1,6 @@
 # Job Insights
-# [Checkout the website](https://job-insights.netlify.app)
+## [Checkout the website](https://job-insights.netlify.app)
 
-# Job Insights
 
 Welcome to Job Insights, a website designed to help job seekers find their ideal job. This website provides various features to help job seekers make informed decisions about their job search. Here is a brief overview of the website's contents:
 
