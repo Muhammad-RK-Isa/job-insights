@@ -53,6 +53,22 @@ const getStoredAppliedJobs = () => {
     return appliedJobs;
 };
 
+const isExisting = id => {
+    const storedAppliedJobs = localStorage.getItem( 'applied-jobs' );
+    if ( storedAppliedJobs ) {
+        const parsedStoredAppliedJobs = JSON.parse( storedAppliedJobs );
+        if ( parsedStoredAppliedJobs.includes( id ) ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+};
+
 const removeFromLS = id => {
     const storedAppliedJobs = localStorage.getItem( 'applied-jobs' );
     if ( storedAppliedJobs ) {
@@ -69,4 +85,4 @@ const deleteSavedAppliedJobs = () => {
     localStorage.removeItem( 'applied-jobs' );
 };
 
-export { addToLS, getStoredAppliedJobs, removeFromLS, deleteSavedAppliedJobs };
+export { addToLS, getStoredAppliedJobs, removeFromLS, deleteSavedAppliedJobs, isExisting };

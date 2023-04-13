@@ -34,19 +34,20 @@ const AppliedJobs = () => {
             try {
                 const res = await fetch( 'jobs.JSON' );
                 const data = await res.json();
-                const matchedJob = await data.filter( job => savedAppliedJobsId.includes( job.id ) );
-                setJobs( matchedJob );
-                // switch ( filter.type ) {
-                //     case "Remote":
-                //         setJobs( matchedJob.filter( job => job.type === "Remote" ) );
-                //         console.log( 'set remote jobs', filterBy );
-                //         break;
-
-                //     case "Onsite":
-                //         setJobs( matchedJob.filter( job => job.type === "Onsite" ) );
-                //         break;
-                //     default:
-                // };
+                const matchedJobs = await data.filter( job => savedAppliedJobsId.includes( job.id ) );
+                if ( filter.type && filter.workPeriod ) {
+                    setJobs( matchedJobs.filter( job => job.type === filter.type && job.workPeriod === filter.workPeriod ) );
+                }
+                else if (filter.type) {
+                    setJobs( matchedJobs.filter( job => job.type === filter.type ) );
+                }
+                else if ( filter.workPeriod ) {
+                    setJobs( matchedJobs.filter( job => job.workPeriod === filter.workPeriod ) );
+                }
+                else {
+                    setJobs( matchedJobs );
+                    console.log( 'default no filter' );
+                }
             }
             catch ( error ) {
                 console.log( error );
@@ -89,9 +90,12 @@ const AppliedJobs = () => {
             <div className='w-11/12 md:w-[85%] lg:w-[70%] grid mx-auto my-16 md:my-[130px] gap-8 md:gap-4 relative'>
                 <button
                     onClick={ () => {
-                        setFilter( { type: null, workPeriod: null } ); setFilterByType( null ); setFilterByWorkPeriod( null );
+                        setFilter( { type: null, workPeriod: null } );
+                        setFilterByType( null );
+                        setFilterByWorkPeriod( null );
+                        setIsFilterToggled( false );
                     } }
-                    className={ `${ ( !filter.type === true && !filter.workPeriod === true ) ? 'hidden' : 'flex' } items-center gap-1 absolute top-0 right-28 border rounded-lg px-2 py-1` }
+                    className={ `${ ( !filter.type && !filter.workPeriod ) ? 'hidden' : 'flex' } items-center gap-1 absolute top-0 right-28 border rounded-lg px-2 py-1` }
                 >
                     <MdFilterAltOff />
                     Remove Filter
@@ -145,24 +149,6 @@ const AppliedJobs = () => {
                             Part Time
                         </label>
 
-
-                        {/* <input
-                            type='radio'
-                            name='filterByWorkPeriod'
-                            onClick={ () => setFilterBy( 'Full Time' ) }
-                            className='w-full text-start border-t px-2 py-1'
-                        >
-                            Full Time
-                        </input>
-
-                        <input
-                            type='radio'
-                            name='filterByWorkPeriod'
-                            onClick={ () => setFilterBy( 'Part Time' ) }
-                            className='w-full text-start border-t px-2 py-1 pb-3'
-                        >
-                            Part Time
-                        </input> */}
                     </div>
                 </div>
 

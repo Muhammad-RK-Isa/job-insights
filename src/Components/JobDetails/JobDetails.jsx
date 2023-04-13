@@ -9,7 +9,8 @@ import dialerIcon from '../../assets/Icons/Frame-2.png';
 import messegeIcon from '../../assets/Icons/Frame-3.png';
 import locationIcon from '../../assets/Icons/Frame-4.png';
 
-import { addToLS, scrollToTop } from '../../utils';
+import { addToLS, isExisting, scrollToTop } from '../../utils';
+import { Toaster, toast } from 'react-hot-toast';
 
 const JobDetails = () => {
 
@@ -23,7 +24,7 @@ const JobDetails = () => {
 
     useEffect( () => {
         const matchedJob = data.find( job => job.id === jobId );
-        if (matchedJob) {
+        if ( matchedJob ) {
             setJob( matchedJob );
         }
         else {
@@ -31,6 +32,19 @@ const JobDetails = () => {
         }
         scrollToTop();
     }, [] );
+
+    const handleApplication = () => {
+        const isExistingJob = isExisting( jobId );
+        switch ( isExistingJob ) {
+            case true:
+                toast.error( 'You have already applied for this job.' );
+                break;
+            default:
+                toast.success( 'Applied successfully!' );
+                addToLS( jobId );
+                break;
+        }
+    };
 
 
     const { jobTitle, company, description, responsibility, educationalRequirements, experiences, salary, contactInfo } = job;
@@ -83,7 +97,7 @@ const JobDetails = () => {
                         <hr className='border-none h-[1px] w-full bg-gradient-to-r from-[#7E90FE2e] to-[#9873FF2e] my-6' />
 
                         <div className="flex flex-col gap-2 mg:gap-6">
-                            { Array.isArray( contactInfo ) && contactInfo.map( (obj, index) => {
+                            { Array.isArray( contactInfo ) && contactInfo.map( ( obj, index ) => {
                                 const { key, value } = obj;
                                 let icon;
                                 switch ( key ) {
@@ -99,7 +113,7 @@ const JobDetails = () => {
                                         break;
                                 }
                                 return (
-                                    <p key={index} className='text-[#757575] font-bold text-sm md:text-xl'>
+                                    <p key={ index } className='text-[#757575] font-bold text-sm md:text-xl'>
                                         <img src={ icon } alt="icon" className='mr-1 inline h-min w-min' />
                                         <span className='text-[#474747] font-extrabold capitalize'>{ key }: </span> &nbsp; { value }
                                     </p>
@@ -111,7 +125,7 @@ const JobDetails = () => {
                     </div>
 
                     <button
-                        onClick={ () => addToLS(jobId) }
+                        onClick={ () => { handleApplication(); } }
                         className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold mt-4 py-4 md:py-5 md:px-7 rounded-md md:rounded-lg'
                     >
                         Apply Now
@@ -120,6 +134,37 @@ const JobDetails = () => {
                 </div>
 
             </div>
+
+            <Toaster
+                containerStyle={ {
+                    height: "3.3rem",
+                    overflow: "hidden"
+                } }
+                position="top-center"
+                reverseOrder={ true }
+                gutter={ 8 }
+                limit={ 1 }
+                duration={ 200 }
+                toastOptions={ {
+                    style: {
+                        backgroundImage: 'linear-gradient( 90deg, #7E90FE9e, #9873FF9e)',
+                        color: 'white',
+                        fontWeight: 'bold'
+                    },
+                    success: {
+                        duration: 1200,
+                        theme: {
+                            primary: 'green',
+                        },
+                    },
+                    error: {
+                        duration: 1200,
+                        theme: {
+                            primary: 'red',
+                        },
+                    },
+                } }
+            />
         </>
     );
 };
