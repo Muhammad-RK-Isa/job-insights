@@ -56,7 +56,7 @@ const AppliedJobs = () => {
                     { Array.isArray( jobs ) ? jobs.map( job => {
                         const { id, img, jobTitle, company, type, workPeriod, location, salary } = job;
                         return (
-                            <div key={ id } className='w-full h-[220px] md:h-[300px] grid grid-cols-3 md:grid-cols-4 border rounded-lg p-4 md:p-8'>
+                            <div key={ id } className='w-full h-[250px] md:h-[300px] grid grid-cols-3 md:grid-cols-4 border rounded-lg p-4 md:p-8'>
 
                                 <div className='h-min'>
                                     <img src={ img } alt="" className='h-full object-contain' />
@@ -86,7 +86,7 @@ const AppliedJobs = () => {
                                         </div>
                                     </div>
 
-                                    <Link to={ `/${ id }` } className='md:hidden w-max bg-gradient-to-r hover:bg-gradient-to-l from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-lg font-semibold px-3 py-2 md:py-3 md:px-7 rounded-md md:rounded-lg mt-auto'>
+                                    <Link to={ `/job/${ id }` } className='md:hidden w-max bg-gradient-to-r hover:bg-gradient-to-l from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-lg font-semibold px-3 py-2 md:py-3 md:px-7 rounded-md md:rounded-lg mt-auto'>
                                         View Details
                                     </Link>
 

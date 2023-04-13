@@ -9,10 +9,9 @@ const Nav = () => {
 
     const [ isToggled, setIsToggled ] = useState( false );
 
-    const location = useLocation();
-
     const [ active, setActive ] = useState( "" );
 
+    const location = useLocation();
 
     let requiredLinks;
 
@@ -23,47 +22,35 @@ const Nav = () => {
         case false:
             requiredLinks = navLinks;
             break;
-    }
-
+    };
 
     useEffect( () => {
         if ( location.pathname === "/" ) {
-            setActive( location.pathname );
+            setActive( "/" );
         }
         else {
             setActive( location.pathname.split( '/' ).join( '' ) );
         }
     }, [] );
 
-
     useEffect( () => {
         window.addEventListener( 'scroll', () => {
             const nav = document.querySelector( 'nav' );
             switch ( window.scrollY > 10 ) {
                 case true:
-                    if ( nav.classList.contains('bg-[#F9F9FF]')) {
-                        nav.classList.replace( 'bg-[#F9F9FF]', 'bg-[#FFFFFF]' );
-                        nav.classList.add( 'drop-shadow-lg' );
-                    } else {
-                        nav.classList.replace( 'bg-transparent', 'bg-[#FFFFFF]' );
-                        nav.classList.add( 'drop-shadow-lg' );
-                    }
+                    nav.classList.replace( 'bg-transparent', 'bg-[#FFFFFF]' );
+                    nav.classList.add( 'drop-shadow-lg' );
                     break;
                 case false:
-                    if ( location.pathname === '/' ) {
-                        nav.classList.replace( 'bg-[#FFFFFF]', 'bg-[#F9F9FF]' );
-                        nav.classList.remove( 'drop-shadow-lg' );
-                    } else {
                         nav.classList.replace( 'bg-[#FFFFFF]', 'bg-transparent' );
                         nav.classList.remove( 'drop-shadow-lg' );
-                    }
                     break;
             };
-        }, [] );
-    } );
+        } );
+    }, [] );
 
     return (
-        <nav className={ `${ location.pathname === '/' ? "bg-[#F9F9FF]" : "bg-transparent"} h-[4.25rem] md:h-[6.25rem] py-4 fixed top-0 ease-in-out duration-300  z-10 w-full`}>
+        <nav className={ `bg-transparent h-[4.25rem] md:h-[6.25rem] py-4 fixed top-0 ease-in-out duration-300  z-10 w-full` }>
             <div className='w-11/12 md:w-[85%] lg:w-[70%] flex items-center justify-between mx-auto'>
                 <Link
                     to="/"
@@ -99,12 +86,12 @@ const Nav = () => {
 
                 <button
                     className='md:hidden'
-                    onClick={ () => setIsToggled( !isToggled )}>
-                    { !isToggled ? <RiMenu3Line size={ 28 } /> : <IoCloseSharp size={ 28 } />}
+                    onClick={ () => setIsToggled( !isToggled ) }>
+                    { !isToggled ? <RiMenu3Line size={ 28 } /> : <IoCloseSharp size={ 28 } /> }
                 </button>
 
                 <div
-                    className={ `${ isToggled ? "flex" : "hidden"} animate-navOpen  flex-col md:hidden gap-[1px] justify-center rounded fixed top-[4.5rem] right-2 overflow-hidden drop-shadow-2xl` }>
+                    className={ `${ isToggled ? "flex" : "hidden" } animate-navOpen  flex-col md:hidden gap-[1px] justify-center rounded fixed top-[4.5rem] right-2 overflow-hidden drop-shadow-2xl` }>
                     { requiredLinks.map( link => {
                         return (
                             <Link

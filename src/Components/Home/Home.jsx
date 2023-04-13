@@ -16,6 +16,9 @@ const Home = () => {
 
     return (
         <div>
+            <div className='bg-[#F9F9FF] h-[4.25rem] md:h-[6.25rem]'>
+
+            </div>
             <Header />
             <JobCategories categories={ categories } />
             <FeaturedJobs />

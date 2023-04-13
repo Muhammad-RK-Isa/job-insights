@@ -2,21 +2,21 @@
     {
         "title": "Account & Finance",
         "jobsCount": "200",
-        "icon": "../src/assets/Icons/accounts 1.png"
+        "icon": "./accounts 1.png"
     },
     {
         "title": "Creative Design",
         "jobsCount": "50",
-        "icon": "../src/assets/Icons/business 1.png"
+        "icon": "./business 1.png"
     },
     {
         "title": "Engineering Job",
         "jobsCount": "344",
-        "icon":"../src/assets/Icons/chip 1.png"
+        "icon":"./chip 1.png"
     },
     {
         "title": "Marketing & Sales",
         "jobsCount": "225",
-        "icon":"../src/assets/Icons/social-media 1.png"
+        "icon":"./social-media 1.png"
     }
 ]

@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import headerImgLeft from '../../assets/All Images/Vector.png';
 import headerImgRight from '../../assets/All Images/Vector-1.png';
+import { scrollToTop } from '../../utils';
 
 
 const Blog = () => {
+    
+    useEffect(() => {
+        scrollToTop();
+    }, [])
+    
+
     return (
         <>
             <header className='h-[20rem] md:h-[25rem] grid place-content-center bg-gradient-to-r from-[#7E90FE0D] to-[#9873FF0D] bg-opacity-5 relative'>
