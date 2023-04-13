@@ -93,7 +93,7 @@ const Nav = () => {
                             }, 100);
                         }
                     } }
-                    className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold p-2 md:py-5 md:px-7 rounded-md md:rounded-lg'
+                    className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold p-2 md:py-4 md:px-7 lg:py-5 rounded-md md:rounded-lg'
                 >
                     Start Applying
                 </button>

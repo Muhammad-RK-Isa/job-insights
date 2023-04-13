@@ -17,8 +17,7 @@ const router = createBrowserRouter( [
     children: [
       {
         index: true,
-        element: <Home />,
-        loader: async () => fetch('./jobCategories.JSON')
+        element: <Home />
       },
       {
         path: "statistics",

@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const JobCategories = ( props ) => {
+const JobCategories = (  ) => {
 
-    const categories = props.categories;
+    const [ categories, setCategories ] = useState( [] );
+
+    useEffect( () => {
+        const getCategories = async () => {
+            try {
+                const response = await fetch( './jobCategories.JSON' );
+                const data = await response.json();
+                setCategories( data );
+            }
+            catch ( error ) {
+                console.log( error );
+            }
+        };
+        getCategories();
+    }, [] );
 
     return (
         <div id='job-categories' className='w-11/12 md:w-[85%] lg:w-[70%] mx-auto flex flex-col items-center justify-center gap-4 mt-24 mb-16 lg:my-32'>
@@ -10,7 +24,7 @@ const JobCategories = ( props ) => {
             <p className='font-[500] text-[#757575] text-center'>Explore thousands of job opportunities with all the information you need. Its your future</p>
 
             <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mt-4'>
-                { Array.isArray( categories ) && categories.map( (catergory, idx) => {
+                { categories.map( (catergory, idx) => {
                     const { title, jobsCount, icon } = catergory;
                     return (
                         <div 

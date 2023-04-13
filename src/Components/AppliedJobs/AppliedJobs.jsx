@@ -46,7 +46,6 @@ const AppliedJobs = () => {
                 }
                 else {
                     setJobs( matchedJobs );
-                    console.log( 'default no filter' );
                 }
             }
             catch ( error ) {
@@ -55,7 +54,6 @@ const AppliedJobs = () => {
         };
         getSavedAppliedJobs();
 
-        console.log( filter );
     }, [ filter ] );
 
 
