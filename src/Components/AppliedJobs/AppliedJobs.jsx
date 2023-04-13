@@ -18,7 +18,16 @@ const AppliedJobs = () => {
 
     const [ isFilterToggled, setIsFilterToggled ] = useState( false );
 
-    const [ filterBy, setFilterBy ] = useState( '' );
+    const [ filter, setFilter ] = useState( {
+        type: null,
+        workPeriod: null
+    } );
+
+    const [ filterByType, setFilterByType ] = useState( null );
+
+    const [ filterByWorkPeriod, setFilterByWorkPeriod ] = useState( null );
+
+
 
     useEffect( () => {
         const getSavedAppliedJobs = async () => {
@@ -26,36 +35,45 @@ const AppliedJobs = () => {
                 const res = await fetch( 'jobs.JSON' );
                 const data = await res.json();
                 const matchedJob = await data.filter( job => savedAppliedJobsId.includes( job.id ) );
-                switch ( filterBy ) {
-                    case "none":
-                        setJobs( matchedJob );
-                        console.log( 'set Default jobs', filterBy );
-                    case "Remote":
-                        setJobs( matchedJob.filter( job => job.type === "Remote" ) );
-                        console.log( 'set remote jobs', filterBy );
-                        break;
+                setJobs( matchedJob );
+                // switch ( filter.type ) {
+                //     case "Remote":
+                //         setJobs( matchedJob.filter( job => job.type === "Remote" ) );
+                //         console.log( 'set remote jobs', filterBy );
+                //         break;
 
-                    case "Onsite":
-                        setJobs( matchedJob.filter( job => job.type === "Onsite" ) );
-                        break;
-                };
+                //     case "Onsite":
+                //         setJobs( matchedJob.filter( job => job.type === "Onsite" ) );
+                //         break;
+                //     default:
+                // };
             }
             catch ( error ) {
                 console.log( error );
             }
         };
         getSavedAppliedJobs();
-    }, [ filterBy ] );
+
+        console.log( filter );
+    }, [ filter ] );
+
+
 
     useEffect( () => {
-        setFilterBy( 'none' );
+        const newFilter = { type: filterByType, workPeriod: filter.workPeriod };
+        setFilter( newFilter );
+    }, [ filterByType ] );
+
+    useEffect( () => {
+        const newFilter = { type: filter.type, workPeriod: filterByWorkPeriod };
+        setFilter( newFilter );
+    }, [ filterByWorkPeriod ] );
+
+
+
+    useEffect( () => {
         scrollToTop();
     }, [] );
-
-    const handleFilter = () => {
-
-    };
-
 
     return (
         <>
@@ -70,48 +88,81 @@ const AppliedJobs = () => {
 
             <div className='w-11/12 md:w-[85%] lg:w-[70%] grid mx-auto my-16 md:my-[130px] gap-8 md:gap-4 relative'>
                 <button
-                    onClick={ () => setFilterBy( 'none' ) }
-                    className={ `${ filterBy === 'none' ? "hidden" : "flex" } items-center gap-1 absolute top-0 right-28 border rounded-lg px-2 py-1` }
+                    onClick={ () => {
+                        setFilter( { type: null, workPeriod: null } ); setFilterByType( null ); setFilterByWorkPeriod( null );
+                    } }
+                    className={ `${ ( !filter.type === true && !filter.workPeriod === true ) ? 'hidden' : 'flex' } items-center gap-1 absolute top-0 right-28 border rounded-lg px-2 py-1` }
                 >
                     <MdFilterAltOff />
                     Remove Filter
                 </button>
                 <div
-                    onClick={ () => setIsFilterToggled( !isFilterToggled ) }
-                    className={ `${ isFilterToggled && "drop-shadow-lg" } duration-300 flex flex-col bg-white border rounded-lg absolute top-0 right-0 overflow-hidden` }
+                    className={ `${ isFilterToggled && "drop-shadow-lg" } duration-300 flex flex-col bg-white border rounded-lg absolute top-0 right-0 overflow-hidden md:cursor-pointer` }
                 >
-                    <div className={`${jobs.length === 0 ? 'hidden' : 'flex'} items-center px-2 py-1 overflow-hidden bg-white`}>
+                    <div
+                        onClick={ () => setIsFilterToggled( !isFilterToggled ) }
+                        className={ `${ jobs.length === 0 ? 'hidden' : 'flex' } items-center px-2 py-1 overflow-hidden bg-white z-10` }
+                    >
                         Filter By
-                        <MdOutlineKeyboardArrowDown size={ 24 } />
+                        <MdOutlineKeyboardArrowDown size={ 24 } className={ `${ isFilterToggled && "rotate-180" } duration-300 transition-all` } />
                     </div>
                     <div className={ `${ isFilterToggled ? 'flex animate-filterToggle' : 'hidden' } flex-col ` }>
-                        <button
-                            onClick={ () => setFilterBy( 'Remote' ) }
-                            className='w-full text-start border-t px-2 py-1'
-                        >
+
+                        <label className={ `${ filterByType === 'Remote' && 'bg-gradient-to-l from-[#7E90FE] to-[#9873FF] bg-clip-text text-transparent font-semibold' } w-full text-start border-t px-2 py-1` } >
+                            <input
+                                type='radio'
+                                name='filterByType'
+                                onClick={ () => setFilterByType( 'Remote' ) }
+                                className='hidden'
+                            />
                             Remote
-                        </button>
-
-                        <button
-                            onClick={ () => setFilterBy( 'Onsite' ) }
-                            className='w-full text-start border-t px-2 py-1'
-                        >
+                        </label>
+                        <label className={ `${ filterByType === 'Onsite' && 'bg-gradient-to-l from-[#7E90FE] to-[#9873FF] bg-clip-text text-transparent font-semibold' } w-full text-start border-t px-2 py-1` } >
+                            <input
+                                type='radio'
+                                name='filterByType'
+                                onClick={ () => setFilterByType( 'Onsite' ) }
+                                className='hidden'
+                            />
                             Onsite
-                        </button>
+                        </label>
+                        <label className={ `${ filterByWorkPeriod === 'Full Time' && 'bg-gradient-to-l from-[#7E90FE] to-[#9873FF] bg-clip-text text-transparent font-semibold' } w-full text-start border-t px-2 py-1` } >
+                            <input
+                                type='radio'
+                                name='filterByWorkPeriod'
+                                onClick={ () => setFilterByWorkPeriod( 'Full Time' ) }
+                                className='hidden'
+                            />
+                            Full Time
+                        </label>
+                        <label className={ `${ filterByWorkPeriod === 'Part Time' && 'bg-gradient-to-l from-[#7E90FE] to-[#9873FF] bg-clip-text text-transparent font-semibold' } w-full text-start border-t px-2 py-1` } >
+                            <input
+                                type='radio'
+                                name='filterByWorkPeriod'
+                                onClick={ () => setFilterByWorkPeriod( 'Part Time' ) }
+                                className='hidden'
+                            />
+                            Part Time
+                        </label>
 
-                        <button
+
+                        {/* <input
+                            type='radio'
+                            name='filterByWorkPeriod'
                             onClick={ () => setFilterBy( 'Full Time' ) }
                             className='w-full text-start border-t px-2 py-1'
                         >
                             Full Time
-                        </button>
+                        </input>
 
-                        <button
+                        <input
+                            type='radio'
+                            name='filterByWorkPeriod'
                             onClick={ () => setFilterBy( 'Part Time' ) }
                             className='w-full text-start border-t px-2 py-1 pb-3'
                         >
                             Part Time
-                        </button>
+                        </input> */}
                     </div>
                 </div>
 
@@ -161,7 +212,7 @@ const AppliedJobs = () => {
 
                             </div> );
                     } ) }
-                    { jobs.length === 0 && <h2 className='w-11/12 mb-8 md:mb-10 mx-auto text-center text-2xl md:text-4xl font-extrabold text-[#1A1919]'>You have not applied to any jobs yet.</h2>}
+                    { jobs.length === 0 && <h2 className='w-11/12 mb-8 md:mb-10 mx-auto text-center text-2xl md:text-4xl font-extrabold text-[#1A1919]'>You have not applied to any jobs yet.</h2> }
                 </div>
             </div>
         </>

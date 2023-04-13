@@ -5,7 +5,7 @@ const JobCategories = ( props ) => {
     const categories = props.categories;
 
     return (
-        <div className='w-11/12 md:w-[85%] lg:w-[70%] mx-auto flex flex-col items-center justify-center gap-4 mt-24 mb-16 lg:my-32'>
+        <div id='job-categories' className='w-11/12 md:w-[85%] lg:w-[70%] mx-auto flex flex-col items-center justify-center gap-4 mt-24 mb-16 lg:my-32'>
             <h2 className='font-extrabold text-4xl md:text-5xl text-center'>Job Category List</h2>
             <p className='font-[500] text-[#757575] text-center'>Explore thousands of job opportunities with all the information you need. Its your future</p>
 

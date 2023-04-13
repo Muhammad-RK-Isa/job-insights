@@ -27,7 +27,7 @@ const JobDetails = () => {
             setJob( matchedJob );
         }
         else {
-            navigate( '*' );
+            navigate( '/invalid_job_id' );
         }
         scrollToTop();
     }, [] );
