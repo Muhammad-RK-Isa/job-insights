@@ -1,10 +1,7 @@
 # Job Insights
 # [Checkout the website](https://job-insights.netlify.app)
 
-
-## <span style="color:red; font-weight:bold">!Development in progress, looking forward to finish it by April 14, 2023</span> 
-
-
+## !Development in progress, looking forward to finish it by April 14, 2023
 
 ## Table of contents
 * Landing Page 

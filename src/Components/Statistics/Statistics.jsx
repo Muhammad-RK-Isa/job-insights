@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import headerImgLeft from '../../assets/All Images/Vector.png';
 import headerImgRight from '../../assets/All Images/Vector-1.png';
 
-import { chartData } from '../../utils/chartData';
 import RadarChart from '../RadarChart/RadarChart';
 
 
@@ -14,20 +13,55 @@ const Statistics = () => {
         datasets: [ {
             label: 'Assignment Results',
             data: [ 60, 60, 50, 59, 50, 29, 60, 60 ],
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: createRadialGradient( 0, 200, [
+                { offset: 0, color: 'rgba( 126, 144, 254, 1 )' },
+                { offset: 1, color: 'rgba(152, 115, 255, 0.2)' }
+            ] ),
+            borderColor: createLinearGradient( 0, 0, 300, 0, [
+                { offset: 0, color: 'rgba( 126, 144, 254, 1 )' },
+                { offset: 1, color: 'rgba(152, 115, 255, 1)' }
+            ] ),
             borderWidth: 2,
+            pointRadius: 5,
+            pointBackgroundColor: createRadialGradient( 0, 200, [
+                { offset: 0, color: 'rgba( 126, 144, 254, 0.5 )' },
+                { offset: 1, color: 'rgba(152, 115, 255, 0.7)' }
+            ] ),
+            pointBorderColor: '#A78AFF'
         } ]
     } );
+
 
     const options = {
         scale: {
             ticks: {
-                
+                suggestedMin: 0,
+                suggestedMax: 60,
+                stepSize: 10,
             },
         },
     };
 
+    function createRadialGradient ( innerRadius, outerRadius, colorStops ) {
+        const canvas = document.createElement( 'canvas' );
+        canvas.width = outerRadius * 2;
+        canvas.height = outerRadius * 2;
+        const ctx = canvas.getContext( '2d' );
+        const gradient = ctx.createRadialGradient( outerRadius, outerRadius, innerRadius, outerRadius, outerRadius, outerRadius );
+        colorStops.forEach( colorStop => gradient.addColorStop( colorStop.offset, colorStop.color ) );
+        ctx.fillStyle = gradient;
+        ctx.fillRect( 0, 0, canvas.width, canvas.height );
+        return ctx.createPattern( canvas, 'no-repeat' );
+    };
+
+
+    function createLinearGradient ( x1, y1, x2, y2, colorStops ) {
+        const canvas = document.createElement( 'canvas' );
+        const ctx = canvas.getContext( '2d' );
+        const gradient = ctx.createLinearGradient( x1, y1, x2, y2 );
+        colorStops.forEach( colorStop => gradient.addColorStop( colorStop.offset, colorStop.color ) );
+        return gradient;
+    }
 
     return (
         <>
@@ -40,7 +74,7 @@ const Statistics = () => {
                 <img src={ headerImgRight } alt="background image" className='w-[200px] md:w-[349px] object-contain absolute top-0 right-0' />
             </header>
 
-            <div className='w-screen h-max grid place-content-center mx-auto p-4 md:p-10 mb-8'>
+            <div className='w-11/12 md:w-[45%] md:h-[30rem] grid place-content-center mx-auto p-4 md:p-10 mb-8'>
                 <RadarChart data={ data } options={ options } />
             </div>
 
