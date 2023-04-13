@@ -3,6 +3,14 @@ import React from 'react';
 import socialMediaIcons from '../../assets/Icons/Group 9969.png';
 
 import { BiCopyright } from 'react-icons/bi';
+import { deleteSavedAppliedJobs } from '../../utils';
+import { Toaster, toast } from 'react-hot-toast';
+
+
+const handleClearStorage = () => {
+    toast.success( 'Local storage cleared ' );
+    deleteSavedAppliedJobs();
+}
 
 const Footer = () => {
     return (
@@ -39,13 +47,16 @@ const Footer = () => {
 
                         <div className='flex flex-col gap-2 md:gap-4'>
                             <h3 className='text-xl md:text-[1.25rem] font-[600] text-white'>Support</h3>
-                            <p className='w-max text-sm md:text-base cursor-pointer'>Help Desk</p>
+                            <p
+                                onClick={ () => handleClearStorage() }
+                                className='w-max text-sm md:text-base cursor-pointer bg-gradient-to-r from-[#7E90FE] to-[#9873FF] bg-clip-text text-transparent'
+                            >Clear Local Storage</p>
                             <p className='w-max text-sm md:text-base cursor-pointer'>Sales</p>
                             <p className='w-max text-sm md:text-base cursor-pointer'>Become a Partner</p>
                             <p className='w-max text-sm md:text-base cursor-pointer'>Developers</p>
                         </div>
 
-                        <div className='flex flex-col gap-2 md:gap-4 ml-20 md:ml-0'>
+                        <div className='flex flex-col gap-2 md:gap-4 ml-[4.3rem] md:ml-0'>
                             <h3 className='text-xl md:text-[1.25rem] font-[600] text-white'>Contact</h3>
                             <p className='w-max text-sm md:text-base cursor-pointer'>524 Broadway , NYC</p>
                             <p className='w-max text-sm md:text-base cursor-pointer'>+1 777 - 978 - 5570</p>
@@ -60,6 +71,31 @@ const Footer = () => {
                     <p>Powered by &nbsp; <span className='font-semibold cursor-pointer' onClick={ () => document.querySelector('body').scrollIntoView( { behavior: 'smooth' } ) }>Job Insights</span></p>
                 </div>
             </div>
+
+            <Toaster
+                containerStyle={ {
+                    height: "3.3rem",
+                    overflow: "hidden"
+                } }
+                position="top-center"
+                reverseOrder={ true }
+                gutter={ 8 }
+                limit={ 1 }
+                duration={ 200 }
+                toastOptions={ {
+                    style: {
+                        backgroundImage: 'linear-gradient( 90deg, #7E90FE9e, #9873FF9e)',
+                        color: 'white',
+                        fontWeight: 'bold'
+                    },
+                    success: {
+                        duration: 1200,
+                        theme: {
+                            primary: 'green',
+                        },
+                    },
+                } }
+            />
         </div>
     );
 };

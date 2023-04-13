@@ -65,8 +65,8 @@ const JobDetails = () => {
             <div className='w-11/12 md:w-[85%] lg:w-[70%] grid md:grid-cols-3 mx-auto my-16 md:my-[130px] gap-8 md:gap-4'>
 
                 <div className="flex flex-col gap-4 md:gap-6 md:col-span-2">
-                    <p className='text-[#757575] font-[500]'><span className='font-extrabold text-[#1A1919]'>Job Description:</span>{ description }</p>
-                    <p className='text-[#757575] font-[500]'><span className='font-extrabold text-[#1A1919]'>Job Responsibility:</span>{ responsibility }</p>
+                    <p className='text-[#757575] font-[500]'><span className='font-extrabold text-[#1A1919]'>Job Description:&nbsp;</span>{ description }</p>
+                    <p className='text-[#757575] font-[500]'><span className='font-extrabold text-[#1A1919]'>Job Responsibility:&nbsp;</span>{ responsibility }</p>
                     <p className='font-extrabold text-[#1A1919]'>Educational Requirements:</p>
                     <p className='text-[#757575] font-[500]'>{ educationalRequirements }</p>
                     <p className='font-extrabold text-[#1A1919]'>Experiences:</p>
@@ -82,18 +82,19 @@ const JobDetails = () => {
 
                         <div className="flex flex-col gap-2 mg:gap-4">
                             <p className='text-[#757575] font-bold text-sm md:text-xl'>
-                                <img src={ bitcoinIcon } alt="coin icon" className='mr-1 inline' />
+                                <img src={ bitcoinIcon } alt="coin icon" className='inline-block w-5 mb-1 mr-1' />
                                 <span className='text-[#474747] font-extrabold'>Salary: </span> &nbsp;
                                 { salary }
                             </p>
                             <p className='text-[#757575] font-bold text-sm md:text-xl'>
-                                <img src={ calenderIcon } alt="coin icon" className='mr-1 inline' />
+                                <img src={ calenderIcon } alt="coin icon" className='inline-block w-5 mb-1 mr-1' />
                                 <span className='text-[#474747] font-extrabold'>Job Title: </span> &nbsp;
                                 { jobTitle }
                             </p>
                         </div>
 
                         <p className='text-2xl text-[#1A1919] font-extrabold mt-8'>Contact Information</p>
+
                         <hr className='border-none h-[1px] w-full bg-gradient-to-r from-[#7E90FE2e] to-[#9873FF2e] my-6' />
 
                         <div className="flex flex-col gap-2 mg:gap-6">
@@ -114,8 +115,9 @@ const JobDetails = () => {
                                 }
                                 return (
                                     <p key={ index } className='text-[#757575] font-bold text-sm md:text-xl'>
-                                        <img src={ icon } alt="icon" className='mr-1 inline h-min w-min' />
-                                        <span className='text-[#474747] font-extrabold capitalize'>{ key }: </span> &nbsp; { value }
+                                        <img src={ icon } alt="icon" className='inline-block w-5 mb-1 mr-1' />
+                                        <span className='text-[#474747] font-extrabold capitalize w-max'>{ key }: </span>
+                                        <span >{ value }</span>
                                     </p>
                                 );
                             } ) }
