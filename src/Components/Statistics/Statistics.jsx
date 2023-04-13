@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import headerImgLeft from '../../assets/All Images/Vector.png';
 import headerImgRight from '../../assets/All Images/Vector-1.png';
 
 import RadarChart from '../RadarChart/RadarChart';
+import { scrollToTop } from '../../utils';
 
 
 const Statistics = () => {
@@ -14,7 +15,7 @@ const Statistics = () => {
             label: 'Assignment Results',
             data: [ 60, 60, 50, 59, 50, 29, 60, 60 ],
             backgroundColor: createRadialGradient( 0, 200, [
-                { offset: 0, color: 'rgba( 126, 144, 254, 1 )' },
+                { offset: 0, color: 'rgba( 126, 144, 254, 0.7 )' },
                 { offset: 1, color: 'rgba(152, 115, 255, 0.2)' }
             ] ),
             borderColor: createLinearGradient( 0, 0, 300, 0, [
@@ -63,9 +64,14 @@ const Statistics = () => {
         return gradient;
     }
 
+    useEffect( () => {
+        scrollToTop();
+    }, [] );
+    
+
     return (
         <>
-            <header className='h-[20rem] md:h-[25rem] grid place-content-center bg-gradient-to-r from-[#7E90FE0D] to-[#9873FF0D] bg-opacity-5 relative'>
+            <header className='h-[15rem] md:h-[25rem] grid place-content-center bg-gradient-to-r from-[#7E90FE0D] to-[#9873FF0D] bg-opacity-5 relative'>
                 <div className='flex flex-col items-center justify-center'>
                     <h2 className='text-3xl md:text-[2rem] font-extrabold'>Assignment Statistics</h2>
                 </div>
@@ -74,7 +80,7 @@ const Statistics = () => {
                 <img src={ headerImgRight } alt="background image" className='w-[200px] md:w-[349px] object-contain absolute top-0 right-0' />
             </header>
 
-            <div className='w-11/12 md:w-[45%] md:h-[30rem] grid place-content-center mx-auto p-4 md:p-10 mb-8'>
+            <div className='h-[30rem] grid place-content-center mx-auto p-4 md:p-10 mb-8'>
                 <RadarChart data={ data } options={ options } />
             </div>
 

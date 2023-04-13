@@ -14,7 +14,7 @@ const Blog = () => {
 
     return (
         <>
-            <header className='h-[20rem] md:h-[25rem] grid place-content-center bg-gradient-to-r from-[#7E90FE0D] to-[#9873FF0D] bg-opacity-5 relative'>
+            <header className='h-[15rem] md:h-[25rem] grid place-content-center bg-gradient-to-r from-[#7E90FE0D] to-[#9873FF0D] bg-opacity-5 relative'>
                 <div className='flex flex-col items-center justify-center'>
                     <h2 className='text-3xl md:text-[2rem] font-extrabold'>QnA</h2>
                 </div>

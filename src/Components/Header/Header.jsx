@@ -4,7 +4,7 @@ import person from '../../assets/All Images/person.png';
 
 const Header = () => {
     return (
-        <header className='bg-[#F9F9FF] pt-8 relative'>
+        <header className='bg-[#F9F9FF] pt-8 relative pt-[4.25rem] md:pt-[6.25rem]'>
             <div className='grid md:grid-cols-2 w-11/12 md:w-[85%] lg:w-[70%] mx-auto'>
                 <div className='flex flex-col justify-center gap-6 my-auto'>
                     <h1 className='text-[#1A1919] font-extrabold text-[4rem] leading-[4.5rem] md:text-[5rem] md:leading-[6.25rem]'>One Step Closer To Your <br /> <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#7E90FE] to-[#9873FF]'>Dream Job</span></h1>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { RiMenu3Line } from 'react-icons/ri';
 import { navLinks } from '../../utils';
@@ -12,6 +12,8 @@ const Nav = () => {
     const [ active, setActive ] = useState( "" );
 
     const location = useLocation();
+
+    const navigate = useNavigate();
 
     let requiredLinks;
 
@@ -77,7 +79,16 @@ const Nav = () => {
 
                 <button
                     onClick={ () => {
-                        document.getElementById( 'featured-jobs' ).scrollIntoView( { behavior: 'smooth' } );
+                        if (location.pathname === '/') {
+                            document.getElementById( 'featured-jobs' ).scrollIntoView( { behavior: 'smooth' } );
+                        }
+                        else {
+                            navigate( '/' );
+                            setActive( '/' );
+                            setTimeout(() => {
+                                document.getElementById( 'featured-jobs' ).scrollIntoView( { behavior: 'smooth' } );
+                            }, 100);
+                        }
                     } }
                     className='bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white text-sm md:text-xl font-semibold p-2 md:py-5 md:px-7 rounded-md md:rounded-lg'
                 >
