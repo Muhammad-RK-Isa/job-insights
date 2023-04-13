@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
+import AppliedJobs from './Components/AppliedJobs/AppliedJobs';
 import Blog from './Components/Blog/Blog';
 import Home from './Components/Home/Home';
+import JobDetails from './Components/JobDetails/JobDetails';
+import NotFound from './Components/NotFound/NotFound';
 import Statistics from './Components/Statistics/Statistics';
 import './index.css';
-import JobDetails from './Components/JobDetails/JobDetails';
-import AppliedJobs from './Components/AppliedJobs/AppliedJobs';
-import NotFound from './Components/NotFound/NotFound';
 
 const router = createBrowserRouter( [
   {
