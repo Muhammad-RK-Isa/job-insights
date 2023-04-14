@@ -103,7 +103,7 @@ const AppliedJobs = () => {
                 >
                     <div
                         onClick={ () => setIsFilterToggled( !isFilterToggled ) }
-                        className={ `${ jobs.length === 0 ? 'hidden' : 'flex' } items-center px-2 py-1 overflow-hidden bg-white z-10` }
+                        className={ `${ jobs.length === 0 && !isFilterToggled ? 'hidden' : 'flex' } items-center px-2 py-1 overflow-hidden bg-white z-10` }
                     >
                         Filter By
                         <MdOutlineKeyboardArrowDown size={ 24 } className={ `${ isFilterToggled && "rotate-180" } duration-300 transition-all` } />
