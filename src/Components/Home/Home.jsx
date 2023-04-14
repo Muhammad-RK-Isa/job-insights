@@ -10,7 +10,6 @@ const Home = () => {
         scrollToTop();
     }, [] );
 
-
     return (
         <div>
             <Header />

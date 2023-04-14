@@ -38,7 +38,7 @@ const AppliedJobs = () => {
                 if ( filter.type && filter.workPeriod ) {
                     setJobs( matchedJobs.filter( job => job.type === filter.type && job.workPeriod === filter.workPeriod ) );
                 }
-                else if (filter.type) {
+                else if ( filter.type ) {
                     setJobs( matchedJobs.filter( job => job.type === filter.type ) );
                 }
                 else if ( filter.workPeriod ) {
@@ -73,6 +73,25 @@ const AppliedJobs = () => {
     useEffect( () => {
         scrollToTop();
     }, [] );
+
+    const [ jobsDataStatus, setJobsDataStatus ] = useState();
+
+    useEffect( () => {
+        const savedJobs = getStoredAppliedJobs();
+        if ( savedJobs.length === 0 ) {
+            setJobsDataStatus( 'You have not applied to any jobs yet.' );
+        }
+        else {
+            if (filter.type || filter.workPeriod) {
+                setJobsDataStatus( 'No matching jobs found.' );
+            }
+            else {
+                setJobsDataStatus( '' );
+            }
+        }
+    }, [jobs])
+    
+
 
     return (
         <>
@@ -196,7 +215,9 @@ const AppliedJobs = () => {
 
                             </div> );
                     } ) }
-                    { jobs.length === 0 && <h2 className='w-11/12 mb-8 md:mb-10 mx-auto text-center text-2xl md:text-4xl font-extrabold text-[#1A1919]'>You have not applied to any jobs yet.</h2> }
+
+                    <h2 className={ `${ jobsDataStatus !== '' ? 'block' : 'hidden' }w-11/12 mb-8 md:mb-10 mx-auto text-center text-2xl md:text-4xl font-extrabold text-[#1A1919]` }>{ jobsDataStatus }</h2>
+
                 </div>
             </div>
         </>

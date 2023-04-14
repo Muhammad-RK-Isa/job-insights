@@ -3,14 +3,18 @@ import React from 'react';
 import socialMediaIcons from '../../assets/Icons/Group 9969.png';
 
 import { BiCopyright } from 'react-icons/bi';
-import { deleteSavedAppliedJobs } from '../../utils';
+import { deleteSavedAppliedJobs, scrollToTop } from '../../utils';
 import { Toaster, toast } from 'react-hot-toast';
 
 
 const handleClearStorage = () => {
     toast.success( 'Local storage cleared ' );
     deleteSavedAppliedJobs();
-}
+    scrollToTop();
+    setTimeout( () => {
+        window.location.reload();
+    }, 1000 );
+};
 
 const Footer = () => {
     return (
@@ -67,8 +71,8 @@ const Footer = () => {
                 <hr className='w-full h-[1px] mx-auto my-6 md:my-[3.125rem] border-none outline-none bg-gradient-to-r from-[#7E90FE33] to-[#9873FF33] ' />
 
                 <div className='flex flex-col md:flex-row items-center justify-between text-white text-opacity-40 text-xs md:text-sm gap-2 md:gap-0'>
-                    <p className='flex items-center'> <BiCopyright size={14} className='hidden md:block' /> <BiCopyright size={12} className='block md:hidden' /> 2023 &nbsp;<span className='font-semibold'>Job Insights. &nbsp;</span> All Rights Reserved.</p>
-                    <p>Powered by &nbsp; <span className='font-semibold cursor-pointer' onClick={ () => document.querySelector('body').scrollIntoView( { behavior: 'smooth' } ) }>Job Insights</span></p>
+                    <p className='flex items-center'> <BiCopyright size={ 14 } className='hidden md:block' /> <BiCopyright size={ 12 } className='block md:hidden' /> 2023 &nbsp;<span className='font-semibold'>Job Insights. &nbsp;</span> All Rights Reserved.</p>
+                    <p>Powered by &nbsp; <span className='font-semibold cursor-pointer' onClick={ () => document.querySelector( 'body' ).scrollIntoView( { behavior: 'smooth' } ) }>Job Insights</span></p>
                 </div>
             </div>
 
