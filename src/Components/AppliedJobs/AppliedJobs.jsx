@@ -74,24 +74,15 @@ const AppliedJobs = () => {
         scrollToTop();
     }, [] );
 
-    const [ jobsDataStatus, setJobsDataStatus ] = useState();
-
-    useEffect( () => {
-        const savedJobs = getStoredAppliedJobs();
-        if ( savedJobs.length === 0 ) {
-            setJobsDataStatus( 'You have not applied to any jobs yet.' );
+    const isDataSaved = () => {
+        const savedData = getStoredAppliedJobs();
+        if (savedData.length > 0) {
+            return true;
         }
         else {
-            if (filter.type || filter.workPeriod) {
-                setJobsDataStatus( 'No matching jobs found.' );
-            }
-            else {
-                setJobsDataStatus( '' );
-            }
+            return false;
         }
-    }, [jobs])
-    
-
+    }
 
     return (
         <>
@@ -122,7 +113,7 @@ const AppliedJobs = () => {
                 >
                     <div
                         onClick={ () => setIsFilterToggled( !isFilterToggled ) }
-                        className={ `${ jobsDataStatus === 'You have not applied to any jobs yet.' ? 'hidden' : 'flex' } items-center px-2 py-1 overflow-hidden bg-white z-10` }
+                        className={ `${ !isDataSaved() ? 'hidden' : 'flex' } items-center px-2 py-1 overflow-hidden bg-white z-10` }
                     >
                         Filter By
                         <MdOutlineKeyboardArrowDown size={ 24 } className={ `${ isFilterToggled && "rotate-180" } duration-300 transition-all` } />
@@ -216,8 +207,9 @@ const AppliedJobs = () => {
                             </div> );
                     } ) }
 
-                    <h2 className={ `${ jobsDataStatus !== '' ? 'block' : 'hidden' }w-11/12 mb-8 md:mb-10 mx-auto text-center text-2xl md:text-4xl font-extrabold text-[#1A1919]` }>{ jobsDataStatus }</h2>
-
+                    <h2 className={ `${ !isDataSaved() ? 'block' : 'hidden' } w-11/12 mb-8 md:mb-10 mx-auto text-center text-2xl md:text-4xl font-extrabold text-[#1A1919]` }>You have not applied to any jobs yet.</h2>
+                    <h2 className={ `${ jobs.length <= 0 || !isDataSaved() ? 'block' : 'hidden' } w-11/12 mb-8 md:mb-10 mx-auto text-center text-2xl md:text-4xl font-extrabold text-[#1A1919]` }>{ ( filterByType || filterByWorkPeriod ) && 'No matching job found.' }</h2>
+                    
                 </div>
             </div>
         </>
